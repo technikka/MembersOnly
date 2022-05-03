@@ -1,1 +1,8 @@
-<h2>Create a new post</h2>
+<section class="form-container">
+  <h3>Create a new post</h3>
+  <%= form_with model: @post do |form| %>
+  <%= form.label :content, class: 'hidden' %> <br>
+  <%= form.text_area :content, size: '60x20', placeholder: "What's on your mind?", autofocus: true %> <br><br>
+  <%= form.submit "Post" %>
+  <% end %>
+</section>

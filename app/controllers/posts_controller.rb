@@ -5,7 +5,23 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def new; end
+  def new
+    @post = current_member.posts.build
+  end
 
-  def create; end
+  def create
+    @post = current_member.posts.build(post_params)
+
+    if @post.save
+      redirect_to root_path, notice: 'Post was successfully created'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:content)
+  end
 end
