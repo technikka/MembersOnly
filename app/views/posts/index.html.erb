@@ -1,6 +1,9 @@
 <div class="posts-container">
   <% @posts.each do |post| %>
     <div class="post">
+      <% if member_signed_in? %>
+        <strong><%= post.member.name %>:</strong> <br>
+      <% end %>
       <%= post.content %>
     </div>
   <% end %>
