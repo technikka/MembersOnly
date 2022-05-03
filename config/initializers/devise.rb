@@ -16,6 +16,11 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7b04458729d14251b88eac41b3464424a3e13247bd179127245c9ded1f45e8ae4b01fd1f5eb6d3b65fc45890335c7e9df13d4fb8666ab3a0d5c03cb2a6604d80'
 
+  # Adding this config as the bandaid for a known Rails 7 and Devise issue where registering a new user
+  # causes an 'undefined method 'user_url' for
+  # <Devise::RegistrationsController
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'

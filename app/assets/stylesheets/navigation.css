@@ -1,0 +1,19 @@
+.navbar {
+  background: #133d4c;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px;
+}
+
+.navbar a:link {
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #426470;
+}

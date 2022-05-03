@@ -15,13 +15,11 @@
     <p class="alert"><%= alert %></p>
 
 
-    <nav>
-      <div class='navbar-brand'>
-        <p>*_Members Only_*</p>
-        <p><%= link_to "Post", new_post_path %></p>
-        <p> <%= link_to "Log In", new_member_session_path %></p>
-        <p><%= link_to "Sign Up", new_member_registration_path %></p>
-      </div>
+    <nav class="navbar">
+      <p><%= link_to "*_Members Only_*", root_path %></p>
+      <p><%= link_to "Post", new_post_path %></p>
+      <p> <%= link_to "Log In", new_member_session_path %></p>
+      <p><%= link_to "Sign Up", new_member_registration_path %></p>
     </nav>
     <%= yield %>
   </body>
