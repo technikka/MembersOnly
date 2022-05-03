@@ -14,6 +14,15 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+
+    <nav>
+      <div class='navbar-brand'>
+        <p>*_Members Only_*</p>
+        <p><%= link_to "Post", new_post_path %></p>
+        <p> <%= link_to "Log In", new_member_session_path %></p>
+        <p><%= link_to "Sign Up", new_member_registration_path %></p>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

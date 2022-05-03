@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+   font-family: 'Ubuntu';
+ }
+
+ .notice {
+   color: green;
+ }
+
+ .alert {
+   color: red;
+ }
