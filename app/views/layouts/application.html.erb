@@ -18,8 +18,13 @@
     <nav class="navbar">
       <p><%= link_to "*_Members Only_*", root_path %></p>
       <p><%= link_to "Post", new_post_path %></p>
-      <p> <%= link_to "Log In", new_member_session_path %></p>
-      <p><%= link_to "Sign Up", new_member_registration_path %></p>
+      <% if member_signed_in? %>
+        <p><%= link_to current_member.name, edit_member_registration_path  %></p>
+        <p><%= link_to "Log Out", destroy_member_session_path, method: :delete %></p>
+      <% else %>
+        <p> <%= link_to "Log In", new_member_session_path %></p>
+        <p><%= link_to "Sign Up", new_member_registration_path %></p>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
